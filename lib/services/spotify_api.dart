@@ -38,7 +38,7 @@ class SpotifyApiService {
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      return data['${type}s']['items']; // Adjust for artists or albums
+      return data['${type}s']['items'];
     } else {
       throw Exception('Failed to fetch data from Spotify');
     }
