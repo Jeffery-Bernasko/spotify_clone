@@ -18,9 +18,13 @@ class SpotifyApiService {
       body: {'grant_type': 'client_credentials'},
     );
 
+    // print('Response status: ${response.statusCode}');
+    // print('Response body: ${response.body}');
+
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       _accessToken = data['access_token'];
+      //print('Access token: $_accessToken');
     } else {
       throw Exception('Failed to authenticate with Spotify');
     }
@@ -38,6 +42,7 @@ class SpotifyApiService {
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
+
       return data['${type}s']['items'];
     } else {
       throw Exception('Failed to fetch data from Spotify');
