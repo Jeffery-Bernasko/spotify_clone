@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:spotify_clone/screens/search_screen.dart';
-import 'package:spotify_clone/services/spotify_api.dart';
 
 Future<void> main() async {
   try {
